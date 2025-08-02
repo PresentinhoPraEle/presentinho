@@ -9,10 +9,39 @@
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <body>
+  <body class="pagina1">
     <div class="container">
       <header>
-        <p class="subtitle">💖 Para o amor da minha vida 💖</p>
+        <p class="subtitle">💖 Música criada por mim, pra você minha vida 💖</p>
+        <div class="custom-player">
+          <button id="playPauseBtn">
+            <svg
+              id="icon-play"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg
+              id="icon-pause"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+              style="display: none"
+            >
+              <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+
+          <input type="range" id="progressBar" value="0" min="0" step="1" />
+          <audio
+            id="audioPlayer"
+            src="assets/Seu dia, mas o presente é meu - inglês.mp3"
+          ></audio>
+        </div>
       </header>
 
       <main>
@@ -28,7 +57,9 @@
             nunca fez isso por você vida<br />
             Só pro momo saber o quanto é especial e importante pra mim ♥
           </p>
-          <a href="carta.html" class="btn">Ler cartinha do momo</a>
+          <a href="carta.html" class="btn" onclick="abrirCarta()"
+            >Ler cartinha do momo</a
+          >
         </section>
 
         <section class="image-section">

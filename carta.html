@@ -9,6 +9,38 @@
   <body>
     <header>
       <a href="index.html" class="back">Voltar</a>
+      <div>
+        <p class="subtitle">💖 Olha mais uma música hihi 💖</p>
+        <div class="custom-player">
+          <button id="playPauseBtn">
+            <svg
+              id="icon-play"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg
+              id="icon-pause"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+              style="display: none"
+            >
+              <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+
+          <input type="range" id="progressBar" value="0" min="0" step="1" />
+          <audio
+            id="audioPlayer"
+            src="assets/É o seu dia, mas ganhei também.mp3"
+          ></audio>
+        </div>
+      </div>
     </header>
     <div class="carta-page">
       <div class="carta-box">
@@ -33,5 +65,6 @@
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

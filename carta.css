@@ -13,7 +13,16 @@ html {
 }
 
 header {
-  margin: 30px 50px;
+  margin: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ccc;
+  flex: 1 1 100%;
+  margin-bottom: 10px;
 }
 
 a.back {
@@ -100,4 +109,77 @@ a.back:hover {
     max-width: 500px;
     margin-left: 0;
   }
+}
+
+.custom-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 430px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 200px;
+}
+
+.custom-player button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+}
+
+.custom-player input[type="range"] {
+  width: 100px;
+  height: 4px;
+  appearance: none;
+  background: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.custom-player input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#playPauseBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#progressBar {
+  width: 100%;
+  appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  background: white;
+  outline: none;
+  margin-right: 30px;
+}
+
+#progressBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+#progressBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
 }
