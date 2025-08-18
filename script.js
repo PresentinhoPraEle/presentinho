@@ -100,3 +100,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+function abrirCarta() {
+  const home = document.querySelector(".home");
+  const carta = document.querySelector(".carta");
+
+  home.style.display = "none";
+  carta.style.display = "block";
+
+  document.body.classList.add("carta-aberta");
+}
+
+function voltarHome() {
+  const home = document.querySelector(".home");
+  const carta = document.querySelector(".carta");
+
+  carta.style.display = "none";
+  home.style.display = "flex";
+
+  document.body.classList.remove("carta-aberta");
+}

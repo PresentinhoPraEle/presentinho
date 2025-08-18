@@ -10,72 +10,66 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <body class="pagina1">
-    <div class="container">
-      <header>
-        <p class="subtitle">
-          💖 Criei essas músicas pra você vida, espero que goste 💖
-        </p>
-        <div class="custom-player">
-          <!-- Play / Pause -->
-          <button id="playPauseBtn">
-            <svg
-              id="icon-play"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="white"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            <svg
-              id="icon-pause"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="white"
-              style="display: none"
-            >
-              <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
-            </svg>
-          </button>
+    <header>
+      <div class="custom-player">
+        <button id="playPauseBtn">
+          <svg
+            id="icon-play"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="white"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg
+            id="icon-pause"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="white"
+            style="display: none"
+          >
+            <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
 
-          <!-- Barra de progresso -->
-          <input type="range" id="progressBar" value="0" min="0" step="1" />
+        <input type="range" id="progressBar" value="0" min="0" step="1" />
 
-          <!-- Botão de opções de música -->
-          <div class="music-dropdown">
-            <button id="musicOptionsBtn">
-              <!-- Ícone de nota musical com + (aqui com o SVG que você baixou) -->
-              <img
-                src="assets/add.svg"
-                alt="Opções de música"
-                class="music-icon"
-              />
-            </button>
-            <ul id="musicMenu" class="hidden">
-              <li data-src="assets/First of Many.mp3">❤️ First of Many ❤️</li>
-              <li data-src="assets/Happy birthday momo.mp3">
-                💗 Happy Birthday Momo 💗
-              </li>
-            </ul>
-          </div>
-
-          <!-- Botão de download -->
-          <a id="downloadBtn" href="assets/First of Many.mp3" download>
+        <div class="music-dropdown">
+          <button id="musicOptionsBtn">
             <img
-              src="assets/download-de-musica.svg"
-              alt="Download"
+              src="assets/add.svg"
+              alt="Opções de música"
               class="music-icon"
             />
-            <span class="tooltip">Baixar a música que está ouvindo</span>
-          </a>
-
-          <!-- Player invisível -->
-          <audio id="audioPlayer" src="assets/First of Many.mp3"></audio>
+            <span class="option-music">Escolher a música</span>
+          </button>
+          <ul id="musicMenu" class="hidden">
+            <li data-src="assets/First of Many.mp3">❤️ First of Many ❤️</li>
+            <li data-src="assets/Happy birthday momo.mp3">
+              💗 Happy Birthday Momo 💗
+            </li>
+          </ul>
         </div>
-      </header>
 
-      <main>
+        <a id="downloadBtn" href="assets/First of Many.mp3" download>
+          <img
+            src="assets/download-de-musica.svg"
+            alt="Download"
+            class="music-icon"
+          />
+          <span class="tooltip">Baixar a música que está tocando</span>
+        </a>
+
+        <audio id="audioPlayer" src="assets/First of Many.mp3"></audio>
+      </div>
+      <p class="subtitle-header">
+        💖 Criei essas músicas pra você vida, espero que goste 💖
+      </p>
+    </header>
+    <main>
+      <div class="home" id="home">
         <section class="text-section">
           <h1 class="love-title">
             Feliz<br />Aniversário <br />
@@ -84,11 +78,12 @@
           <p class="message">
             Sei que você não gosta de ler TCC, mas num tem jeito, você casou com
             uma romantica nerdzinha kk <br />
-            Queria fazer algo diferente pra você, pois tenho certeza que ninguém
-            nunca fez isso por você vida<br />
-            Só pro momo saber o quanto é especial e importante pra mim ♥
+            Queria fazer algo diferente pra você, mesmo que já tenha dado seu
+            presente<br />
+            Esse é o preço por ser tão especial e importante pra mim ♥
           </p>
-          <a href="carta.html" class="btn" onclick="abrirCarta()"
+
+          <a href="#carta" class="btn" onclick="abrirCarta()"
             >Ler cartinha do momo</a
           >
         </section>
@@ -96,8 +91,100 @@
         <section class="image-section">
           <img src="assets/beijo.png" alt="Couple kissing" />
         </section>
-      </main>
-    </div>
+      </div>
+
+      <div class="carta" id="carta">
+        <div class="carta-page">
+          <button id="voltarBtn" onclick="voltarHome()">← Voltar</button>
+          <div class="carta-box">
+            <div class="carta-scroll">
+              <p>
+                Primeiramente, feliz aniversário meu amor ♥ <br />
+                Te desejo toda a felicidade desse mundo, peço a Deus que ele
+                possa está sempre te abençoando, te guiando e que ele realize
+                seus sonhos.<br />
+                Desejo muita saúde, muito amor e tudo de maravilhoso pra nós,
+                mesmo que tenhamos dias difícieis, acredito que com a gente
+                junto tudo pode ser possível e conquistado. <br />
+
+                Você é a promessa mais bonita que Deus escreveu para mim. Por
+                isso disse várias vezes que você é a resposta das minhas
+                orações. <br />
+
+                Mas sabe de uma coisa, não foi uma oração como pensam que é
+                quando falam "orei por vc", eu não estava pedindo um namorado e
+                você puff apareceu, não é nada disso.<br />
+
+                Eu não estava esperando por ninguém, então vc surgiu na minha
+                vida. Mas ai foi só amizade, zero intenções de ambos lados, e a
+                parte curiosa, foi que passamos a conversar mais depois do seu
+                aniversário com a saga da Myo com os meninos.<br />
+
+                Isso acabou nos aproximando cada vez mais, e nos flertes de
+                brincadeira, seus flertes foram tão bons que me apaixonei haha
+                <br />
+
+                Então vc simplesmente vc me correspondeu mesmo que eu não tenha
+                dito nada que gostava de vc. Foi então que fui perguntar de vc
+                pra Deus e foi então que recebi a segunda certeza da minha vida,
+                uma que todo mundo tem é a morte, mas vc se tornou a minha
+                segunda certeza na vida.
+                <br />
+
+                Por isso que falei com garantias que nunca vou te deixar também
+                -- momo é meu presentinho divino, sei que a vida as vezes não é
+                muito fácil, mas estarei sempre aqui pra você.<br />
+
+                Quero te fazer muito feliz, quero poder te beijar, te amar e
+                viver com vc. Quero ver seu sorriso quando eu fizer algo bobo
+                pra te animar quando vc tiver estressado ou bolado com algo
+                (vulgo T1 te tiltando -- mesmo q isso seja bem perigoso pra mim
+                tbm, droga kk).
+                <br />
+
+                Apesar da minha idade, não tenho muita experiencia de vida,
+                então não te prometo o relacionamento perfeito pq isso é novo
+                pra mim, vc também é meu primeiro namorado, posso errar as
+                vezes, posso me emburrar com algo e nem sempre vou saber o que
+                vc ta pensando ou algo que te incomoda.<br />
+
+                Eu sei que você não gosta de falar de futuro, mas isso não me
+                impede de sonhar e deseja literalmente tudo com você. Lembra que
+                falei que te coloquei em tudo na minha vida?! Mesmo que ainda
+                não pudemos nos encontrar, isso não muda o que sinto e nem o que
+                quero. <br />
+
+                É com vc que eu quero casar, passar o resto da minha vida, quero
+                crescer junto, criar uma familia, ter nossa bagunça, tudo no seu
+                tempo é claro. Particulamente falando, nunca tive algo tão
+                precioso pra mim quanto tenho agora, que é você!!<br />
+
+                Sou muito grata por tudo, pela pessoa incrivel que vc é, pelo
+                seu amor, seu cuidado e pela paz que vc me dá. Continue sendo
+                essa pessoa a qual amo super, te desejo um aniversário cheio de
+                bolo e amor. <br />
+
+                Sou grata por Deus te me dado vc, sou grata pela segurança que
+                tenho com vc, Sou uma garota completamente feliz por ter vc como
+                meu namorado/meu marido ♥ <br />
+
+                Poderia continuar falando muito mais coisas que tenho no
+                coração, mas não to afim de um cascudo kk porque sei que vc não
+                gosta nada de TCC, principalmente que pretendo te enviar isso
+                assim que meia noite bater. <br />
+
+                Espero que goste dessa carta, do site e das músicas também,
+                ainda sinto que ta simples as coisas, mas é porque eu não manjo
+                muito bem de design nem nada, prometo que é tudo de coração.
+                <br />
+
+                Te amooo muitão amor da minha vida ♥
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="script.js"></script>
   </body>
