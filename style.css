@@ -208,3 +208,116 @@ a.btn:hover {
   cursor: pointer;
   border: none;
 }
+
+/* --- Dropdown de músicas --- */
+.music-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#musicOptionsBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+#musicOptionsBtn svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: transform 0.2s ease;
+}
+
+#musicOptionsBtn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Caixinha do menu */
+#musicMenu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  padding: 6px 0;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+#musicMenu.hidden {
+  display: none;
+}
+
+#musicMenu li {
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+#musicMenu li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.music-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#musicOptionsBtn img {
+  filter: invert(100%);
+}
+
+#musicOptionsBtn:hover img {
+  transform: scale(1.1);
+}
+
+#downloadBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+#downloadBtn img {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%);
+  transition: transform 0.2s ease;
+}
+
+#downloadBtn:hover img {
+  transform: scale(1.1);
+}
+
+/* Tooltip */
+#downloadBtn .tooltip {
+  position: absolute;
+  bottom: 125%; /* acima do botão */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease; /* aparece quase instantâneo */
+  z-index: 10;
+}
+
+/* Mostrar tooltip ao passar o mouse */
+#downloadBtn:hover .tooltip {
+  opacity: 1;
+}

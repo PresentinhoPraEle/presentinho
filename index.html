@@ -12,8 +12,11 @@
   <body class="pagina1">
     <div class="container">
       <header>
-        <p class="subtitle">💖 Música criada por mim, pra você minha vida 💖</p>
+        <p class="subtitle">
+          💖 Criei essas músicas pra você vida, espero que goste 💖
+        </p>
         <div class="custom-player">
+          <!-- Play / Pause -->
           <button id="playPauseBtn">
             <svg
               id="icon-play"
@@ -36,7 +39,38 @@
             </svg>
           </button>
 
+          <!-- Barra de progresso -->
           <input type="range" id="progressBar" value="0" min="0" step="1" />
+
+          <!-- Botão de opções de música -->
+          <div class="music-dropdown">
+            <button id="musicOptionsBtn">
+              <!-- Ícone de nota musical com + (aqui com o SVG que você baixou) -->
+              <img
+                src="assets/add.svg"
+                alt="Opções de música"
+                class="music-icon"
+              />
+            </button>
+            <ul id="musicMenu" class="hidden">
+              <li data-src="assets/First of Many.mp3">❤️ First of Many ❤️</li>
+              <li data-src="assets/Happy birthday momo.mp3">
+                💗 Happy Birthday Momo 💗
+              </li>
+            </ul>
+          </div>
+
+          <!-- Botão de download -->
+          <a id="downloadBtn" href="assets/First of Many.mp3" download>
+            <img
+              src="assets/download-de-musica.svg"
+              alt="Download"
+              class="music-icon"
+            />
+            <span class="tooltip">Baixar a música que está ouvindo</span>
+          </a>
+
+          <!-- Player invisível -->
           <audio id="audioPlayer" src="assets/First of Many.mp3"></audio>
         </div>
       </header>

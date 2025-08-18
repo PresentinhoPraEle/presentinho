@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estourarConfetti();
   }
 
-  // Função confetti pode estar fora, só a chamada dentro
+  // Função confetti
   function estourarConfetti() {
     const duracao = 2 * 1000;
     const fim = Date.now() + duracao;
@@ -34,12 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
   }
 
-  // Agora o código do áudio e controles, sempre dentro do DOMContentLoaded
   const audio = document.getElementById("audioPlayer");
   const playBtn = document.getElementById("playPauseBtn");
   const iconPlay = document.getElementById("icon-play");
   const iconPause = document.getElementById("icon-pause");
   const progress = document.getElementById("progressBar");
+  const musicBtn = document.getElementById("musicOptionsBtn");
+  const musicMenu = document.getElementById("musicMenu");
+  const downloadBtn = document.getElementById("downloadBtn");
 
   if (audio && playBtn && iconPlay && iconPause && progress) {
     playBtn.addEventListener("click", () => {
@@ -64,6 +66,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     progress.addEventListener("input", () => {
       audio.currentTime = progress.value;
+    });
+  }
+
+  if (musicBtn && musicMenu) {
+    musicBtn.addEventListener("click", () => {
+      musicMenu.classList.toggle("hidden");
+    });
+
+    musicMenu.querySelectorAll("li").forEach((item) => {
+      item.addEventListener("click", () => {
+        const newSrc = item.getAttribute("data-src");
+        audio.pause();
+        audio.src = newSrc;
+        audio.load();
+        audio.play();
+
+        iconPlay.style.display = "none";
+        iconPause.style.display = "inline";
+
+        if (downloadBtn) {
+          downloadBtn.href = newSrc;
+        }
+
+        musicMenu.classList.add("hidden");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!musicBtn.contains(e.target) && !musicMenu.contains(e.target)) {
+        musicMenu.classList.add("hidden");
+      }
     });
   }
 });
